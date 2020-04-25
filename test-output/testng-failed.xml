@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="portNo" value="4568"/>
+  <parameter name="appURL" value="https://www.hotstar.com/in"/>
+  <test name="ChromeTest">
+    <parameter name="portNo" value="4567"/>
+    <parameter name="appURL" value="https://www.hotstar.com/in"/>
+    <classes>
+      <class name="gridtest.GridTestParallel"/>
+    </classes>
+  </test> <!-- ChromeTest -->
+  <test name="InternetExplorerTest">
+    <parameter name="portNo" value="4568"/>
+    <parameter name="appURL" value="https://www.hotstar.com/in"/>
+    <classes>
+      <class name="gridtest.GridTestParallel"/>
+    </classes>
+  </test> <!-- InternetExplorerTest -->
+  <test name="InternetExplorerTest(failed)" parallel="tests">
+    <parameter name="portNo" value="4568"/>
+    <parameter name="appURL" value="https://www.hotstar.com/in"/>
+    <classes>
+      <class name="gridtest.GridTestParallel">
+        <methods>
+          <include name="tearDown"/>
+          <include name="loginHotstar"/>
+          <include name="setUP"/>
+          <include name="setUP"/>
+        </methods>
+      </class> <!-- gridtest.GridTestParallel -->
+    </classes>
+  </test> <!-- InternetExplorerTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
